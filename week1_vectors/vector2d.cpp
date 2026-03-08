@@ -15,11 +15,14 @@ int main() {
     Vector2 e = a.multiply(b); //Multiply the vector a with vector b
     double f = a.dot(b);       //Calculate the dot product of vector a and vector b 
     double g = a.magnitude();  //Calculate the magnitude of vector a
+    Vector2 h = a.normalize(); //Normalize the vector a
 
     std::cout << c.x << " " << c.y << std::endl;
+    std::cout << d.x << " " << d.y << std::endl;
     std::cout << e.x << " " << e.y << std::endl;
     std::cout << f << endl;
     std::cout << g << endl;
+    std::cout << h.x << " " << h.y << std::endl;
 
     assert(a.magnitude() == 5); // Check if the magnitude of vector v is 5
     

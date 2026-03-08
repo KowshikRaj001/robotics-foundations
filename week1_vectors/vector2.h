@@ -13,6 +13,7 @@ public:
     Vector2 multiply(const Vector2& other);
     double dot(const Vector2& other);
     double magnitude();
+    Vector2 normalize();
 };
 
 #endif
