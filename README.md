@@ -1,15 +1,14 @@
-# Robotics Foundations
+# Robotics C++ Foundations
 
-This repository documents my journey learning the core
-C++ and mathematical foundations required for robotics
-and perception systems.
+This repository contains my foundational C++ implementations
+for robotics mathematics.
 
-Focus Areas:
-- C++ for robotics systems
-- Vector and matrix mathematics
-- Coordinate transformations
-- Computer vision fundamentals
+## Week 1
+Vector2D implementation
 
-Goal:
-Build strong foundations before moving into ROS2,
-robotics perception, and autonomous systems.
+Features:
+- vector addition
+- subtraction
+- dot product
+- magnitude
+- normalization
