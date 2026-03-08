@@ -1,5 +1,4 @@
 #include "vector2.h"
-using namespace std;
 
 Vector2::Vector2(double x, double y) {
     this->x = x;
@@ -20,8 +19,4 @@ Vector2 Vector2::multiply(const Vector2& other) {
 
 double Vector2::dot(const Vector2& other) {
     return (x * other.x + y * other.y);
-}
-
-double Vector2::magnitude() {
-    return std::sqrt(x*x + y*y);
 }

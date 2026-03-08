@@ -3,12 +3,17 @@
 using namespace std;
 
 int main() {
-    Vector2 a(2,3);
-    Vector2 b(4,5);
+    std::cin >> a.x >> a.y;
+    std::cin >> b.x >> b.y;
 
-    Vector2 c = b.subtract(a);
+
+    Vector2 c = a.add(a);
+    Vector2 d = b.subtract(a);
+    Vector2 e = a.multiply(b);
 
     std::cout << c.x << " " << c.y << std::endl;
+    std::cout << d.x << " " << d.y << std::endl;
+    std::cout << e.x << " " << e.y << std::endl;
 
     return 0;
 }
