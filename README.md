@@ -1,23 +1,27 @@
 # Robotics C++ Foundations
 
-A modular C++ implementation of core mathematical primitives used in robotics, including 2D vectors, 2×2 matrices, and rigid body transformations.
+A modular and extensible C++ library implementing core linear algebra primitives used in robotics, including 2D/3D vectors, matrices, and rigid body transformations.
 
 ---
 
-## 🚀 Overview
+## Overview
 
-This project builds the foundational math required for robotics systems such as motion planning, coordinate transformations, and kinematics.
+This project provides a clean, from-scratch implementation of the mathematical building blocks required for robotics systems such as motion planning, kinematics, and coordinate frame transformations.
 
-It is designed with clean structure, modularity, and extensibility in mind — similar to real-world robotics software stacks.
+The focus is on:
+
+* clarity of implementation
+* mathematical correctness
+* extensibility toward real robotics frameworks (e.g., ROS2)
 
 ---
 
-## 📦 Features
+## Features
 
 ### 🔹 Vector2D
 
-* Basic vector operations (addition, subtraction, scaling)
-* Dot product and cross product
+* Vector arithmetic (addition, subtraction, scaling)
+* Dot product and 2D cross product
 * Magnitude and normalization
 * Angle between vectors
 * Vector projection
@@ -27,44 +31,58 @@ It is designed with clean structure, modularity, and extensibility in mind — s
 ### 🔹 Matrix2D
 
 * 2×2 matrix representation
-* Matrix multiplication
-* Matrix-vector multiplication
+* Matrix–matrix multiplication
+* Matrix–vector transformation
 * Determinant and inverse
 * Identity matrix
-* Rotation matrix generation
+* 2D rotation matrices
 
 ---
 
 ### 🔹 Transform2D
 
-* Combines rotation and translation
-* Applies rigid body transformations
-* Supports transformation composition
-* Core abstraction for coordinate frame manipulation
+* Rigid body transformation in 2D (SE(2))
+* Composition of transformations
+* Rotation + translation abstraction
+* Point transformation across coordinate frames
 
 ---
 
-## 🧠 Concepts Covered
+### 🔹 Vector3D (NEW)
+
+* 3D vector representation (x, y, z)
+* Dot product (alignment & projection)
+* Cross product (orthogonal vector generation)
+* Magnitude and normalization
+* Angle computation between vectors
+* Vector projection in 3D space
+
+---
+
+## Concepts Covered
 
 * Linear Algebra for Robotics
-* Coordinate Transformations
+* Euclidean Vector Spaces (ℝ², ℝ³)
 * Rotation Matrices
-* Rigid Body Motion (SE(2) basics)
+* Rigid Body Transformations (SE(2))
+* Geometric Interpretation of Dot & Cross Products
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```id="projstruct"
 robotics-cpp-foundations/
 ├── include/
 │   ├── Vector2D.h
 │   ├── Matrix2D.h
-│   └── Transform2D.h
+│   ├── Transform2D.h
+│   └── Vector3D.h
 ├── src/
 │   ├── Vector2D.cpp
 │   ├── Matrix2D.cpp
-│   └── Transform2D.cpp
+│   ├── Transform2D.cpp
+│   └── Vector3D.cpp
 ├── main.cpp
 ├── CMakeLists.txt
 └── README.md
@@ -72,81 +90,88 @@ robotics-cpp-foundations/
 
 ---
 
-## ⚙️ Build Instructions
+## Build Instructions
 
 ### Prerequisites
 
-* C++17 compatible compiler
+* C++17 compatible compiler (GCC/Clang)
 * CMake ≥ 3.10
+* Linux (recommended for robotics workflows)
 
-### Build Steps
+---
 
-```bash
+### Build & Run
+
+```bash id="buildrun"
 git clone <your-repo-url>
 cd robotics-cpp-foundations
 
-mkdir build
-cd build
-
+mkdir build && cd build
 cmake ..
 make
-./robotics_cpp
+
+./robotic_cpp
 ```
 
 ---
 
-## 🧪 Example Output
+## Example Output
 
-```
-Sum: (4, 6)
-Difference: (2, 2)
-Scaled: (6, 8)
-Dot: 11
-Cross: 2
-Magnitude v1: 5
-Angle: 0.179853
-Projection of v1 onto v2: (2.2, 4.4)
+```id="outputblock"
+Cross product: (0, 0, 1)
+
 Rotated vector: (0, 1)
+
 Final transformed point: (2, 4)
 ```
 
 ---
 
-## 📌 Applications in Robotics
+## Applications in Robotics
 
-This implementation directly relates to:
+This library directly maps to real-world robotics systems:
 
-* Mobile robot motion modeling
-* Coordinate frame transformations (TF systems in ROS)
-* Robot arm kinematics
-* Sensor data transformations
+* **Mobile Robotics**
+  Motion modeling and velocity transformations
+
+* **Manipulator Kinematics**
+  Joint transformations and coordinate mapping
+
+* **ROS2 TF System**
+  Frame transformations and pose representation
+
+* **Perception Systems**
+  Sensor data transformation between coordinate frames
 
 ---
 
-## ⚠️ Notes
+## Numerical Considerations
 
-* Floating point precision may introduce small numerical errors
-* This project focuses on clarity over optimization
-* Designed as a learning and foundation-building project
+* Floating-point operations may introduce small precision errors
+* Comparisons should use tolerances (e.g., `1e-6`) instead of exact equality
+* Designed for learning and correctness, not optimized for high-performance computing
 
 ---
 
-## 🔮 Future Improvements
+## Roadmap
 
-* Extend to 3D (Vector3D, Matrix3D)
-* Homogeneous transformations
-* Integration with ROS2 (geometry messages)
+* Matrix3D (3×3 rotation matrices)
+* Transform3D (SE(3) representation)
+* Homogeneous transformation matrices (4×4)
+* Integration with ROS2 geometry messages
 * Unit testing (GoogleTest)
+* Benchmarking and optimization
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-Kowshik Raj
-B.Tech AI & ML — Robotics Focus
+**Kowshik Raj**
+B.Tech Artificial Intelligence & Machine Learning
+Focused on Robotics Systems and Autonomous Machines
 
 ---
 
-## 📄 License
+## License
 
-This project is open-source and available for learning and educational use.
+This project is open-source and intended for educational and research purposes.
