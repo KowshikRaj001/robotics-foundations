@@ -12,4 +12,5 @@ add_executable(robotic_cpp
     robotic_cpp/src/Vector2D.cpp
     robotic_cpp/src/Matrix2D.cpp
     robotic_cpp/src/Transform2D.cpp
+    robotic_cpp/src/Vector3D.cpp
 )

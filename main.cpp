@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Vector2D.h"
+#include "Vector3D.h"
 #include "Matrix2D.h"
 #include "Transform2D.h"
 
@@ -53,6 +54,13 @@ int main() {
 
     std::cout << "Final transformed point: ";
     Result.print();
+
+    Vector3D v3(1, 0, 0);
+    Vector3D v4(0, 1, 0);
+
+    Vector3D cross = v3.cross(v4);
+    std::cout << "Cross product of v3 and v4: ";
+    cross.print();
 
     return 0;
 }
